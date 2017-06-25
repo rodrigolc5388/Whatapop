@@ -19,7 +19,9 @@
   <button
     class="button expanded"
     [class.success]="data.state === 'selling'"
-    [class.secondary]="data.state === 'sold'">
+    [class.secondary]="data.state === 'sold'"
+    (click)="itemSeleccionado(data.id)">
+    <!-- No tengo muy claro qué debo pasar como parámetro -->
       <span *ngIf="data.state === 'selling'">
         Comprar por {{ data.price }} €
       </span>

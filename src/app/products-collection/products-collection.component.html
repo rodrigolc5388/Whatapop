@@ -15,9 +15,9 @@
     <app-product
       *ngFor="let product of products"
       [data]="product"
-      class="column">
-    <!-- No estoy seguro de que este evento vaya aquí dentro de la estructura del template -->
-    (clickEnComprar)="mostrarDetalle($event)"
+      class="column"
+    (clickEnComprar)="mostrarDetalle($event)">
+    <!-- Me suscribo al evento emitido por 'product.component' -->
     </app-product>
   </div>
   <div *ngIf="products?.length === 0" class="text-center">

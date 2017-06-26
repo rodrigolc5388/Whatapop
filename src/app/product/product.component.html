@@ -21,7 +21,7 @@
     [class.success]="data.state === 'selling'"
     [class.secondary]="data.state === 'sold'"
     (click)="itemSeleccionado(data.id)">
-    <!-- No tengo muy claro qué debo pasar como parámetro; supongo que el ID del producto -->
+    <!-- Paso como parámetro el ID del producto seleccionado: 'data.id'. -->
       <span *ngIf="data.state === 'selling'">
         Comprar por {{ data.price }} €
       </span>

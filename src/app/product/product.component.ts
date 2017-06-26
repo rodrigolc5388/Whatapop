@@ -22,10 +22,11 @@ export class ProductComponent {
   | mismo.                                                           |
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  //Como no tengo claro de qué tipo es el dato que se recibe del template, no tengo claro de qué tipo es el EventEmmiter, por lo que de momento, tiro con tipo 'number'.
+  // Como el parámetro que se recibe es el ID del producto, que es un number, el tipo del EventEmitter también es de tipo number.
   @Output() clickEnComprar = new EventEmitter<number>();
-  
+
   itemSeleccionado(idItem: number): void {
+    console.log(idItem);
     this.clickEnComprar.emit(idItem);
   }
 }

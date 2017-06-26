@@ -46,13 +46,9 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
   | como parámetro el identificador del producto.                    |
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+  // Implemente el manejador del evento recibido en el template.
   mostrarDetalle(idItem: number): void {
-    
-    this._productService
-        .getProduct(idItem)
-        .subscribe(() => {
-          this._router.navigate(['products/idItem']);
-        });
+    this._router.navigate(['/products', idItem]);
   }
 
-}
+} 

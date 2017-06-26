@@ -17,8 +17,9 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
   products: Product[];
   private _filterStream$: Subject<ProductFilter> = new Subject;
 
-  constructor(private _productService: ProductService,
-  private _router: Router) { }
+  constructor(
+    private _productService: ProductService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     this._filterStream$
@@ -45,11 +46,12 @@ export class ProductsCollectionComponent implements OnDestroy, OnInit {
   | como parámetro el identificador del producto.                    |
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-  mostrarDetalle(data: number): void {
+  mostrarDetalle(idItem: number): void {
+    
     this._productService
-        .getProduct(data)
+        .getProduct(idItem)
         .subscribe(() => {
-          this._router.navigate(['products/:data']);
+          this._router.navigate(['products/idItem']);
         });
   }
 

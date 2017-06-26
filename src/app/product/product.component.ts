@@ -24,6 +24,7 @@ export class ProductComponent {
 
   //Como no tengo claro de qué tipo es el dato que se recibe del template, no tengo claro de qué tipo es el EventEmmiter, por lo que de momento, tiro con tipo 'number'.
   @Output() clickEnComprar = new EventEmitter<number>();
+  
   itemSeleccionado(idItem: number): void {
     this.clickEnComprar.emit(idItem);
   }

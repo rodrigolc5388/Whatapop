@@ -11,13 +11,13 @@
     | definido en él para notificar los clics sobre los productos.     |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <!-- No estoy seguro de que este evento vaya aquí dentro de la estructura del template -->
-    (clickEnComprar)="mostrarDetalle($event)"
 
     <app-product
       *ngFor="let product of products"
       [data]="product"
       class="column">
+    <!-- No estoy seguro de que este evento vaya aquí dentro de la estructura del template -->
+    (clickEnComprar)="mostrarDetalle($event)"
     </app-product>
   </div>
   <div *ngIf="products?.length === 0" class="text-center">

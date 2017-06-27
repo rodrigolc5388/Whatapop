@@ -22,11 +22,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserService } from './user.service';
 import { PublicationDatePipe } from './publication-date.pipe';
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Path                                                        |
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| No olvides declarar PublicationDatePipe en el módulo.            |
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 @NgModule({
   declarations: [

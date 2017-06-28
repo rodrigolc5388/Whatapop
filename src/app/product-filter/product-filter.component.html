@@ -8,8 +8,19 @@
         <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
       </select>
     </div>
+
+    <!-- Modificación RedWinePath -->
+    <div>
+      <!-- Pendiente añadir etiqueta para cada filtro -->
+      <!-- <label for="stateId">Estado</label> -->
+      <div class="small-6 medium-2 large-3 columns">
+        <select [(ngModel)]="productFilter.state" id="stateId">
+          <option *ngFor="let state of _productState" [value]="state.id">{{ state.value }}</option>
+        </select>
+      </div>
     <div class="small-12 medium-3 large-2 columns">
       <button (click)="notifyHost()" class="button expanded">Buscar</button>
+    </div>
     </div>
   </div>
 </div>

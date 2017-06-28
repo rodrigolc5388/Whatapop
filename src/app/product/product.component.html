@@ -16,7 +16,7 @@
     (click)="itemSeleccionado(data.id)">
     <!-- Paso como parámetro el ID del producto seleccionado: 'data.id'. -->
       <span *ngIf="data.state === 'selling'">
-        Comprar por {{ data.price }} €
+        Comprar por {{ data.price | number: '1.2' }} €
       </span>
       <span *ngIf="data.state === 'sold'">
         Ver detalles

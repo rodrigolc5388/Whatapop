@@ -1,14 +1,6 @@
 <div *ngIf="data">
   <img [src]="data.photo" class="thumbnail" />
-
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-  | Purple Path                                                      |
-  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-  | Aplica el siguiente formato al precio del producto:              |
-  |   - 1 dígito mínimo (parte entera)                               |
-  |   - 2 dígitos mínimo y máximo (parte decimal)                    |
-  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
+  
   <button
     class="button expanded"
     [class.success]="data.state === 'selling'"

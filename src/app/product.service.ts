@@ -19,6 +19,7 @@ export class ProductService {
 
     let filtro: any;
 
+    // RedPath - Filtros por texto y categoría
     if (filter) {
       if (filter.text) {
         filtro = `&q=${filter.text}`;
@@ -27,22 +28,13 @@ export class ProductService {
       if (filter.category && filter.category !== '0') {
         filtro += `&category.id=${filter.category}`
       }
+
+      // YellowPath - Filtro por state del producto.
+      if (filter.state){
+          filtro += `&state=${filter.state}`;
+      }
     }
-
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-    | Yellow Path                                                      |
-    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-    | Pide al servidor que te retorne los productos filtrados por      |
-    | estado.                                                          |
-    |                                                                  |
-    | En la documentación de 'JSON Server' tienes detallado cómo       |
-    | filtrar datos en tus peticiones, pero te ayudo igualmente. La    |
-    | querystring debe tener estos parámetros:                         |
-    |                                                                  |
-    |   - Búsqueda por estado:                                         |
-    |       state=x (siendo x el estado)                               |
-    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
+    
     return this._http
       .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC${filtro}`)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));

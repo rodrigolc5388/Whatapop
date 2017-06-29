@@ -24,4 +24,17 @@
     </div>
     </div>
   </div>
+  
+  <div class="row">
+    <div class="small-6 medium-2 large-3 columns">
+      <input [(ngModel)]="productFilter.minPrice" type="number" placeholder="Precio mínimo" min="0" step="5" ng-change="true">
+    </div>
+    <div class="small-6 medium-2 large-3 columns">
+      <input [(ngModel)]="productFilter.maxPrice" type="number" placeholder="Precio máximo" min="0" step="5" ng-change="true">
+    </div>
+  </div>
 </div>
+
+
+
+

@@ -15,6 +15,7 @@
       <!-- <label for="stateId">Estado</label> -->
       <div class="small-6 medium-2 large-3 columns">
         <select [(ngModel)]="productFilter.state" id="stateId">
+          <option value="" ng-if="false"></option>
           <option *ngFor="let state of _productState" [value]="state.id">{{ state.value }}</option>
         </select>
       </div>

@@ -15,7 +15,6 @@ export class ProductService {
     @Inject(BackendUri) private _backendUri) { }
 
   getProducts(filter: ProductFilter = undefined): Observable<Product[]> {
-    console.log(filter);
 
     let filtro: any;
 
@@ -24,16 +23,26 @@ export class ProductService {
       if (filter.text) {
         filtro = `&q=${filter.text}`;
       }
-
+      // Filtro por categoría
       if (filter.category && filter.category !== '0') {
         filtro += `&category.id=${filter.category}`
       }
 
       // YellowPath - Filtro por state del producto.
       if (filter.state){
-          filtro += `&state=${filter.state}`;
+        filtro += `&state=${filter.state}`;
+      }
+
+      if (filter.maxPrice != null && filter.maxPrice !== 0){
+        filtro += `&maxPrice=${filter.maxPrice}`
+      }
+
+      if (filter.minPrice && filter.minPrice !== 0){
+        filtro += `&maxPrice=${filter.minPrice}`
       }
     }
+
+
     
     return this._http
       .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC${filtro}`)

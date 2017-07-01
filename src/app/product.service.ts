@@ -34,11 +34,11 @@ export class ProductService {
       }
 
       if (filter.maxPrice != null && filter.maxPrice !== 0){
-        filtro += `&maxPrice=${filter.maxPrice}`
-      }
+        filtro += `&price_lte=${filter.maxPrice}`
+      } 
 
       if (filter.minPrice && filter.minPrice !== 0){
-        filtro += `&maxPrice=${filter.minPrice}`
+        filtro += `&price_gte=${filter.minPrice}`
       }
     }
 

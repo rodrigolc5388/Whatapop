@@ -15,7 +15,6 @@ export class ProductComponent {
   @Output() clickEnComprar = new EventEmitter<number>();
 
   itemSeleccionado(idItem: number): void {
-    console.log(idItem);
     this.clickEnComprar.emit(idItem);
   }
 }

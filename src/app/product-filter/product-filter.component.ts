@@ -44,4 +44,9 @@ export class ProductFilterComponent implements OnDestroy, OnInit {
     this.onSearch.emit(this.productFilter);
   }
 
+  clearFilter(): void {
+    //let filtroVacio: ProductFilter = {};
+    this.onSearch.emit();
+  }
+
 }

@@ -15,7 +15,7 @@ export class ProductService {
     @Inject(BackendUri) private _backendUri) { }
 
   getProducts(filter: ProductFilter = undefined): Observable<Product[]> {
-
+    //console.log('getProducts', filter);
     let filtro: any;
 
     // RedPath - Filtros por texto y categoría
@@ -42,8 +42,6 @@ export class ProductService {
       }
     }
 
-
-    
     return this._http
       .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC${filtro}`)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));

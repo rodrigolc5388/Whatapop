@@ -41,12 +41,21 @@ export class ProductFilterComponent implements OnDestroy, OnInit {
   }
 
   notifyHost(): void {
+
+    // Este console.log sí me devuelve un objeto con las
+    // opciones seleccionadas en el filtro.
+    console.log('notifyHost', this.productFilter);
     this.onSearch.emit(this.productFilter);
   }
 
   clearFilter(): void {
-    //let filtroVacio: ProductFilter = {};
-    this.onSearch.emit();
+    //this.onSearch.emit(null);
+    
+    // El botón no funciona; aparentemente el código está bien pero
+    // el console.log no arroja nada.
+    this.productFilter = {};
+    console.log('clearFilter', this.productFilter);
+    this.notifyHost();
   }
 
 }

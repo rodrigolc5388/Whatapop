@@ -13,6 +13,7 @@ export class Product {
       +json.publishedDate,
       json.state,
       +json.price,
+      +json.like,
       json.photo
     );
   }
@@ -33,5 +34,6 @@ export class Product {
     public publishedDate: number,
     public state: string,
     public price: number,
+    public like: number, // Creo una propiedad donde habría metido los 'Likes' de cada producto.
     public photo: string) { }
 }

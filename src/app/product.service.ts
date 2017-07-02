@@ -67,4 +67,13 @@ export class ProductService {
       .map((data: Response): Product => Product.fromJson(data.json()));
   }
 
+  // Intento aproximación BrokenWhitePath
+  addProductLike(productId: number): Observable<Product> {
+    const body: any = { 'like': +1 };
+    return this._http
+      .patch(`${this._backendUri}/products/${productId}`, body)
+      .map((data: Response): Product => Product.fromJson(data.json()));
+  }
+
+
 }

@@ -59,4 +59,10 @@ export class ProductDetailsComponent implements OnDestroy, OnInit {
     window.history.back();
   }
 
+  // Intento aproximación BrokenWhitePath
+  addLike(productoId: number):void {
+    this._productService
+        .addProductLike(productoId);
+  }
+
 }

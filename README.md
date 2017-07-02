@@ -1,5 +1,17 @@
 # angular4-mobile-test-directions
 
+### Comentarios
+1. **RedWinePath**  
+    Incluyo filtros de búsqueda por estado ('Selling'/'Sold') y por rango de precios.
+    Intenté incluir un botón para la limpieza de los filtros pero, a pesar de estar el código bien, no funciona. 
+    Se puede ver el código en el fichero 'product-filter.component.ts'.
+
+2. **BrokenWhitePath**
+    Entendí el enunciado de una forma diferente que el resto de compañeros.
+    A mi entender, había que agregar un botón de 'Like' al producto, NO una sección al estilo 'Mis Favoritos' donde guardar mis productos favoritos.
+    Creé un botón en 'product-details.component.html' (con estética 0) con un manejador del evento en el correspondiente fichero 'ts'. También creé un método en 'products.service.ts' con la intención de persistir datos en el server.
+    Sin embargo, he tenido problemas para averiguar como actualizar la propiedad 'like' creada en el modelo de producto para ese fin, ya que en el body de una petición no puedo enviar lógica.
+
 **Whatapop** es un _amago_ de clon de [Wallapop](http://es.wallapop.com). Sus pretensiones son mucho más humildes que las del conocido portal, pero a la vez contribuyen a una grandiosa causa: que aprendas a familiarizarte con HTML5, CSS3 y Angular.
 
 Lee detenidamente estas instrucciones **hasta el final**, las vas a necesitar para completar la práctica.
